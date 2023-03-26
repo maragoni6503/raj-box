@@ -1,0 +1,24 @@
+name: Raj example 
+
+on:
+ workflow_dispatch:
+ 
+ 
+jobs:
+ display:
+  runs-on: ubuntu latest
+  env:
+    platform: Azure
+    region: Central
+    profile_path: profile/
+    
+  steps:
+    - name: Display custom Environmantal Variables
+      if: ${{ env.platform == 'Azure' }}
+      run: |
+        echo "The platform is ${{ env.platform }}"
+        echo "The region is $region"
+    
+  
+ 
+
